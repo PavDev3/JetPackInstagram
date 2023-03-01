@@ -141,7 +141,17 @@ fun LoginDivier() {
 
 @Composable
 fun LoginButton(loginEnable: Boolean) {
-    Button(onClick = {}, enabled = loginEnable, modifier = Modifier.fillMaxWidth()) {
+    Button(
+        onClick = {},
+        enabled = loginEnable,
+        modifier = Modifier.fillMaxWidth(),
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = Color(0xFF4EA8E9),
+            disabledBackgroundColor = Color(0xFF78C8F9),
+            contentColor = Color.White,
+            disabledContentColor = Color.White
+        )
+    ) {
         Text(text = "Log In")
 
     }
@@ -160,7 +170,7 @@ fun ForgotPassword(modifier: Modifier) {
 
 @Composable
 fun Password(password: String, onValueChanged: (String) -> Unit) {
-    val passwordVisibility by remember { mutableStateOf(false) }
+    var passwordVisibility by remember { mutableStateOf(false) }
     TextField(
         value = password,
         onValueChange = { onValueChanged(it) },
@@ -181,7 +191,7 @@ fun Password(password: String, onValueChanged: (String) -> Unit) {
             } else {
                 Icons.Filled.Visibility
             }
-            IconButton(onClick = { passwordVisibility != passwordVisibility }) {
+            IconButton(onClick = { passwordVisibility = !passwordVisibility }) {
                 Icon(imageVector = imagen, contentDescription = "show password")
             }
         },
