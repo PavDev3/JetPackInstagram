@@ -65,7 +65,7 @@ fun SingUp() {
 fun Body(modifier: Modifier) {
     var email by rememberSaveable { mutableStateOf("") }
     var password by rememberSaveable { mutableStateOf("") }
-    var isLoginEnable by rememberSaveable { mutableStateOf(false) }
+    val isLoginEnable by rememberSaveable { mutableStateOf(false) }
     Column(modifier = modifier) {
         ImageHeader(Modifier.align(Alignment.CenterHorizontally))
         Spacer(modifier = Modifier.size(16.dp))
