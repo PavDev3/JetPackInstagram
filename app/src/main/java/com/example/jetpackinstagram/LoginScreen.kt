@@ -185,7 +185,6 @@ fun Password(password: String, onValueChanged: (String) -> Unit) {
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent
         ),
-
         trailingIcon = {
             val imagen = if (passwordVisibility) {
                 Icons.Filled.VisibilityOff
