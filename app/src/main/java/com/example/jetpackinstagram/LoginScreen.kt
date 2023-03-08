@@ -93,8 +93,6 @@ fun Body(modifier: Modifier) {
         LoginDivier()
         Spacer(modifier = Modifier.size(32.dp))
         SocialLogin()
-
-
     }
 }
 
