@@ -140,7 +140,6 @@ fun LoginDivier() {
                 .height(1.dp)
                 .weight(1f)
         )
-
     }
 }
 
@@ -158,7 +157,6 @@ fun LoginButton(loginEnable: Boolean) {
         )
     ) {
         Text(text = "Log In")
-
     }
 }
 
