@@ -1,4 +1,4 @@
-package com.example.jetpackinstagram.login
+package com.example.jetpackinstagram.login.ui
 
 import android.util.Patterns
 import androidx.lifecycle.LiveData
