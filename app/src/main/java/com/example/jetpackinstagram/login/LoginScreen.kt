@@ -72,14 +72,15 @@ fun SingUp() {
 
 @Composable
 fun Body(modifier: Modifier, loginViewModel: LoginViewModel) {
-    val email:String by loginViewModel.email.observeAsState(initial = "")
-    val password:String by loginViewModel.password.observeAsState(initial = "")
-    var isLoginEnable by rememberSaveable { mutableStateOf(false) }
+    val email: String by loginViewModel.email.observeAsState(initial = "")
+    val password: String by loginViewModel.password.observeAsState(initial = "")
+    val isLoginEnable: Boolean by loginViewModel.isLoginEnable.observeAsState(false)
+
     Column(modifier = modifier) {
         ImageHeader(Modifier.align(Alignment.CenterHorizontally))
         Spacer(modifier = Modifier.size(16.dp))
         Email(email) {
-            loginViewModel.onLoginChanged(it,password)
+            loginViewModel.onLoginChanged(it, password)
         }
         Spacer(modifier = Modifier.size(4.dp))
         Password(password) {
@@ -90,7 +91,7 @@ fun Body(modifier: Modifier, loginViewModel: LoginViewModel) {
         Spacer(modifier = Modifier.size(16.dp))
         LoginButton(isLoginEnable)
         Spacer(modifier = Modifier.size(16.dp))
-        LoginDivier()
+        LoginDivider()
         Spacer(modifier = Modifier.size(32.dp))
         SocialLogin()
     }
@@ -119,7 +120,7 @@ fun SocialLogin() {
 }
 
 @Composable
-fun LoginDivier() {
+fun LoginDivider() {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
         Divider(
             Modifier
@@ -160,9 +161,6 @@ fun LoginButton(loginEnable: Boolean) {
     }
 }
 
-fun enableLogin(email: String, password: String): Boolean {
-    return Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length > 5
-}
 
 @Composable
 fun ForgotPassword(modifier: Modifier) {
