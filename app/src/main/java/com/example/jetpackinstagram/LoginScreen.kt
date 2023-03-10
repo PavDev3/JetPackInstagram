@@ -161,8 +161,7 @@ fun LoginButton(loginEnable: Boolean) {
 }
 
 fun enableLogin(email: String, password: String): Boolean {
-    return Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length > 5
-}
+    return Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length > 5}
 
 @Composable
 fun ForgotPassword(modifier: Modifier) {
